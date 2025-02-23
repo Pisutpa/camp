@@ -1,11 +1,11 @@
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
+import FormInput from "@/components/form/FormInput"
 import { Button } from "@/components/ui/button"
 
 const createProfileAction = async (fromData: FormData) => {
     'use server'
     const firstName = fromData.get('firstName') as string
-    console.log('hhihelllll', firstName)
+    console.log('hhihelllll')
 }
 
 const CreateProfile = () => {
@@ -14,13 +14,14 @@ const CreateProfile = () => {
             <h1 className=" text-2xl font-semibold mb-8 capitalize">
                 new user
             </h1>
-            <div>
+            <div className="border p-8 rounded-md ">
                 <form action={createProfileAction}>
-                    <div className="mb-2">
-                        <Label htmlFor="firstName" >
-                            First Name
-                            <Input name="firstName" type="text" />
-                        </Label>
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+
+                  
+                    <FormInput name="fistName"label="Fist Name"type="text"placeholder="Fist Name"/>
+                    <FormInput name="lastName"label="Last Name"type="text"placeholder="Last Name"/>
+                    <FormInput name="userName"label="Username"type="text"placeholder="Username"/>
                     </div>
                     <Button type="submit" size='lg'>
                         Create Profile
