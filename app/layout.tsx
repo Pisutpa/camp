@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./Providers";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner";
 
 
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         {children}
         </main>
         </Providers>
+       
       </body>
     </html>
     </ClerkProvider>
