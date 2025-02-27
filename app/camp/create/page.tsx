@@ -1,6 +1,8 @@
 
 import { createLandmarkAction } from "@/actions/actions"
 import { SubmitButton } from "@/components/form/Buttons"
+import Categoryinput from "@/components/form/CategoryInput"
+
 import FormContainer from "@/components/form/FormContainer"
 import FormInput from "@/components/form/FormInput"
 import { currentUser } from "@clerk/nextjs/server"
@@ -22,6 +24,10 @@ const CreateProfile = async () => {
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                         <FormInput name="name" label=" Create Landmark" type="text" placeholder=" Create Landmark" />
                        
+                   
+
+                    {/*category Input*/}
+                    <Categoryinput/>
                     </div>
                     <SubmitButton text="Create Profile" size='lg' />
                 </FormContainer>
