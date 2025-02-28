@@ -5,6 +5,9 @@ import Categoryinput from "@/components/form/CategoryInput"
 
 import FormContainer from "@/components/form/FormContainer"
 import FormInput from "@/components/form/FormInput"
+import ProvinceInput from "@/components/form/ProvinceInput"
+import TextAreaInput from "@/components/form/TextAreaInput"
+
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 
@@ -22,13 +25,24 @@ const CreateProfile = async () => {
             <div className="border p-8 rounded-md ">
                 <FormContainer action={createLandmarkAction}>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
-                        <FormInput name="name" label=" Create Landmark" type="text" placeholder=" Create Landmark" />
+                     
+                        <FormInput name="name" 
+                        label=" Create Landmark" 
+                        type="text" 
+                        placeholder=" Create Landmark" />
                        
-                   
-
                     {/*category Input*/}
                     <Categoryinput/>
                     </div>
+                    <TextAreaInput name="description"/> 
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    <FormInput name="price" 
+                        label="Price" 
+                        type="number" 
+                        placeholder="Price" />
+                         <ProvinceInput />
+                       </div>
+                      
                     <SubmitButton text="Create Profile" size='lg' />
                 </FormContainer>
             </div>
